@@ -1,0 +1,31 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/App%20UI/AppStyle.uss?fileID=7433441132597879392&amp;guid=ce02509f0a4f86c409b1038f8de84c2f&amp;type=3#AppStyle" />
+    <ui:VisualElement style="flex-grow: 1; margin-top: 3px; margin-right: 3px; margin-bottom: 3px; margin-left: 3px; -unity-font-definition: url(&quot;project://database/Assets/Fonts/LibreFranklin-Medium.ttf?fileID=12800000&amp;guid=839a92d9fd94dd5409fc88bacbf2f0e1&amp;type=3#LibreFranklin-Medium&quot;); background-position-x: right 0; background-position-y: bottom 0; background-size: 24px 24px;">
+        <ui:Label text="&lt;b&gt;&lt;i&gt;Spriter Project Resizer&lt;/i&gt;&lt;/b&gt;  This utility will copy the input Spriter project&apos;s .scml file and all of the project&apos;s image files into another folder and resize them with the scale specified by &lt;b&gt;Scaling Factor&lt;/b&gt;.  Your are &lt;u&gt;strongly&lt;/u&gt; urged to select an empty output folder--creating it, if necessary, with the &lt;b&gt;Save As...&lt;/b&gt; dialog." style="white-space: normal; -unity-font-style: normal;" />
+        <ui:GroupBox style="align-items: flex-start; justify-content: flex-start; align-self: auto; align-content: auto; margin-top: 3px; padding-top: 2px; padding-bottom: 2px;">
+            <ui:Label text="Input File (.scml) (The Spriter project to resize)" style="margin-top: 2px; padding-top: 2px; padding-bottom: 2px;" />
+            <ui:GroupBox language-direction="Inherit" style="width: auto; flex-direction: row; height: auto; align-items: center; justify-content: flex-start; align-self: stretch; margin-top: 3px; padding-top: 2px; padding-bottom: 2px;">
+                <ui:TextField name="InputPathTextField" placeholder-text="Enter the path to the input Spriter file" class="neutral-field" style="height: 33px; width: 80%; max-width: 100%; flex-grow: 1;" />
+                <ui:Button text="…" name="InputPathSelectionButton" style="height: 30px; width: 32px; align-self: auto; align-items: auto;" />
+            </ui:GroupBox>
+            <ui:Label text="* This field is invalid" emoji-fallback-support="false" enable-rich-text="false" name="InputPathValidLabel" style="margin-left: 15px; color: rgb(191, 58, 58); margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0;" />
+        </ui:GroupBox>
+        <ui:GroupBox style="margin-top: 3px; padding-top: 2px; padding-bottom: 2px;">
+            <ui:Label text="Save As Output File and Folder (The newly created Spriter project)" style="margin-top: 2px; padding-top: 2px; padding-bottom: 2px;" />
+            <ui:GroupBox language-direction="Inherit" style="width: auto; flex-direction: row; height: auto; align-items: center; justify-content: flex-start; align-self: stretch; margin-top: 3px; padding-top: 2px; padding-bottom: 2px;">
+                <ui:TextField name="OutputPathTextField" placeholder-text="Enter the path to the output Spriter file" class="neutral-field" style="height: 33px; width: 286px; flex-grow: 1;" />
+                <ui:Button text="…" name="OutputPathSelectionButton" style="height: 30px; width: 32px; align-items: auto;" />
+            </ui:GroupBox>
+            <ui:Label text="* This field is invalid" emoji-fallback-support="false" enable-rich-text="false" name="OutputPathValidLabel" style="margin-left: 15px; color: rgb(191, 58, 58); margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0;" />
+        </ui:GroupBox>
+        <ui:GroupBox style="margin-top: 3px; padding-top: 2px; padding-bottom: 2px;">
+            <ui:Slider label="Scaling Factor" value="0.3" high-value="0.95" low-value="0.05" show-input-field="true" fill="true" name="ScalingFactorSlider" style="opacity: 1; border-top-color: rgb(0, 0, 0); visibility: visible; display: flex;" />
+        </ui:GroupBox>
+        <ui:GroupBox style="align-items: stretch; justify-content: flex-end; align-self: stretch; align-content: auto; flex-grow: 1;">
+            <ui:GroupBox style="flex-direction: row; justify-content: space-around; align-items: auto;">
+                <ui:Button text="Exit" name="ExitButton" style="width: 200px;" />
+                <ui:Button text="Resize" name="ResizeButton" style="width: 200px; min-width: auto;" />
+            </ui:GroupBox>
+        </ui:GroupBox>
+    </ui:VisualElement>
+</ui:UXML>

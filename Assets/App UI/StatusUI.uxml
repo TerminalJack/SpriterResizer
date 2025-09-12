@@ -1,0 +1,9 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/App%20UI/StatusStyle.uss?fileID=7433441132597879392&amp;guid=5a80e51116bacc24ba621ec14f6969e2&amp;type=3#StatusStyle" />
+    <ui:VisualElement style="flex-grow: 1; -unity-font-definition: url(&quot;project://database/Assets/Fonts/LibreFranklin-Medium.ttf?fileID=12800000&amp;guid=839a92d9fd94dd5409fc88bacbf2f0e1&amp;type=3#LibreFranklin-Medium&quot;);">
+        <ui:ScrollView name="MessageScrollView" style="flex-grow: 1; opacity: 1;" />
+        <ui:GroupBox style="align-content: auto; align-self: auto; flex-direction: row; justify-content: center;">
+            <ui:Button text="OK" name="OkButton" />
+        </ui:GroupBox>
+    </ui:VisualElement>
+</ui:UXML>

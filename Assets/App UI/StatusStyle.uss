@@ -1,0 +1,67 @@
+VisualElement > #MessageScrollView > #unity-content-and-vertical-scroll-container > #unity-content-viewport {
+    background-color: rgb(166, 220, 234);
+}
+
+.unity-scroller {
+    width: 12px;
+    flex-grow: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+#unity-low-button {
+    display: none;
+}
+
+#unity-high-button {
+    display: none;
+}
+
+#unity-slider {
+    width: 12px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    min-width: 12px;
+}
+
+#unity-tracker {
+    background-color: rgb(118, 177, 192);
+}
+
+#unity-dragger {
+    background-color: rgb(193, 228, 237);
+    width: 6px;
+    min-width: 6px;
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#unity-dragger:hover {
+    background-color: rgb(217, 236, 241);
+}

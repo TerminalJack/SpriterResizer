@@ -1,0 +1,43 @@
+.valid-field {
+    border-color: #2ecc71; /* green */
+    border-width: 2px;
+}
+
+.invalid-field {
+    border-color: #e74c3c; /* red */
+    border-width: 2px;
+}
+
+.neutral-field {
+    border-color: #bdc3c7; /* gray */
+    border-width: 1px;
+}
+
+VisualElement > .unity-group-box > .unity-group-box > .unity-text-field > #unity-text-input {
+    padding-top: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+}
+
+VisualElement > .unity-group-box > #scaleFactor > .unity-slider__label {
+    width: 110px;
+    min-width: 110px;
+    align-self: center;
+    align-content: auto;
+    -unity-text-align: middle-left;
+}
+
+VisualElement > .unity-group-box > #ScalingFactorSlider > .unity-slider__input > #unity-text-field {
+    width: 90px;
+}
+
+VisualElement > .unity-group-box > #ScalingFactorSlider > .unity-slider__label {
+    width: 100px;
+    min-width: 100px;
+    align-self: center;
+    justify-content: flex-start;
+    align-items: auto;
+    align-content: auto;
+    padding-bottom: 10px;
+}
