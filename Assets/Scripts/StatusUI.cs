@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class StatusUI : MonoBehaviour
 {
-    [SerializeField] private UIDocument _mainUIDocument;
+    [HideInInspector] public Action OnOkButtonClicked;
 
     private UIDocument _uiDocument;
     private VisualElement _root;
@@ -11,19 +12,15 @@ public class StatusUI : MonoBehaviour
     private Button _okButton;
     private ScrollView _scrollView;
 
-    private VisualElement _mainUIRoot;
-
     private void Awake()
     {
         _uiDocument = GetComponent<UIDocument>();
         _root = _uiDocument.rootVisualElement;
 
-        _mainUIRoot = _mainUIDocument.rootVisualElement;
-
         _okButton = _root.Q<Button>("OkButton");
         _scrollView = _root.Q<ScrollView>("MessageScrollView");
 
-        _okButton.RegisterCallback<ClickEvent>(OnOkButtonClicked);
+        _okButton.RegisterCallback<ClickEvent>(HandleOkButtonClicked);
     }
 
     public void BeginResize()
@@ -59,16 +56,15 @@ public class StatusUI : MonoBehaviour
 
         _scrollView.Add(label);
 
-        // Wait for layout to complete before scrolling
-        label.RegisterCallback<GeometryChangedEvent>(evt =>
+        _scrollView.schedule.Execute(() =>
         {
-            _scrollView.ScrollTo(label);
-        });
+            var scroller = _scrollView.verticalScroller;
+            scroller.value = scroller.highValue > 0 ? scroller.highValue : 0;
+        }).StartingIn(delayMs: 20);
     }
 
-    private void OnOkButtonClicked(ClickEvent evt)
+    private void HandleOkButtonClicked(ClickEvent evt)
     {
-        _root.style.display = DisplayStyle.None;
-        _mainUIRoot.style.display = DisplayStyle.Flex;
+        OnOkButtonClicked?.Invoke();
     }
 }

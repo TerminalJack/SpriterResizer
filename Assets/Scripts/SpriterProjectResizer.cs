@@ -45,15 +45,9 @@ public class SpriterProjectResizer
             }
         }
 
-        string GetFileWidthAttribValue(string valueStr, string file)
-        {
-            return lastFileWidth.ToString();
-        }
+        string GetFileWidthAttribValue(string valueStr, string file) => lastFileWidth.ToString();
 
-        string GetFileHeightAttribValue(string valueStr, string file)
-        {
-            return lastFileHeight.ToString();
-        }
+        string GetFileHeightAttribValue(string valueStr, string file) => lastFileHeight.ToString();
 
         string ScaleDoubleValue(string valueStr) => (float.Parse(valueStr) * NewScale).ToString("0.######");
 

@@ -46,8 +46,8 @@ public sealed class ImageResizer
 
         SaveTexture(resized, outputPath);
 
-        UnityEngine.Object.DestroyImmediate(source);
-        UnityEngine.Object.DestroyImmediate(resized);
+        Object.DestroyImmediate(source);
+        Object.DestroyImmediate(resized);
 
         return true;
     }
@@ -75,7 +75,7 @@ public sealed class ImageResizer
 
             if (current != src)
             {
-                UnityEngine.Object.DestroyImmediate(current);
+                Object.DestroyImmediate(current);
             }
 
             current = next;
@@ -97,7 +97,7 @@ public sealed class ImageResizer
 
             if (current != src)
             {
-                UnityEngine.Object.DestroyImmediate(current);
+                Object.DestroyImmediate(current);
             }
 
             current = last;

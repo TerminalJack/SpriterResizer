@@ -301,7 +301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49a06f301650f642bbb31d59e2e4e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StatusUI
-  _mainUIDocument: {fileID: 1545677711}
 --- !u!114 &1006155976
 MonoBehaviour:
   m_ObjectHideFlags: 0

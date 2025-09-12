@@ -114,6 +114,14 @@ public class MainUI : MonoBehaviour
         Application.Quit();
     }
 
+    private void OnStatusUIOkButtonClicked()
+    {
+        _root.style.display = DisplayStyle.Flex;
+        _statusRoot.style.display = DisplayStyle.None;
+
+        _statusUI.OnOkButtonClicked -= OnStatusUIOkButtonClicked;
+    }
+
     private void OnResizeButtonClicked(ClickEvent evt)
     {
         float scalingFactor = _scalingFactorSlider.value;
@@ -122,6 +130,8 @@ public class MainUI : MonoBehaviour
 
         _root.style.display = DisplayStyle.None;
         _statusRoot.style.display = DisplayStyle.Flex;
+
+        _statusUI.OnOkButtonClicked += OnStatusUIOkButtonClicked;
 
         _statusUI.ClearMessages();
 
