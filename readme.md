@@ -16,7 +16,7 @@ Many commercial Spriter projects include oversized image files--far larger than 
 
 This utility scales an entire Spriter project--from 5% to 95% of its original size--by generating resized images and updating the .scml file accordingly.
 
->If you're not satisfied with the image quality produced by the utility, you can replace the resized images using your preferred image editor once you have generated an updated .scml file with the utility.
+>The quality of the resized images should be on-par with what Spriter produces via its `Save as resized project` feature.  That said, if you're not satisfied with the image quality then you can replace the resized images using your preferred image editor once you have generated an updated .scml file with the utility.
 >
 >Because the .scml file now reflects the new dimensions, just ensure you apply the same scaling factor used during the initial resize so that the images are of similar size.  The images that your image editor produces don't need to have the *exact* same dimensions.  They should work fine so long as they are within a pixel or two.
 
@@ -26,7 +26,7 @@ Launch `Spriter Project Resizer.exe`.  The utility's main screen is shown below.
 
 ![Resize Spriter Project Window](Docs/Images/SpriterProjectResizerApp.png)
 
->The application's window is resizable and the content is reactive--that is, it will resize itself based on the window's size.  The border is just a couple of pixels wide, however, and it can be difficult to grab precisely with the mouse.
+>The application's window is resizable and the content is responsive--that is, it will resize itself based on the window's size.  The border is just a couple of pixels wide, however, and it can be difficult to grab precisely with the mouse.
 
 Enter the path to the .scml file that is being resized.  You can manually enter the file path or use the `…` button to select it using your OS file browser.
 
