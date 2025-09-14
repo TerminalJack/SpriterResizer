@@ -3,6 +3,7 @@ using UnityEngine.UIElements;
 using System.IO;
 using SFB;
 using System.Collections;
+using System;
 
 public class MainUI : MonoBehaviour
 {
@@ -46,9 +47,26 @@ public class MainUI : MonoBehaviour
     bool IsOutputDirectoryValid =>
         !string.IsNullOrEmpty(_outputPath) &&
         Directory.Exists(Path.GetDirectoryName(_outputPath)) &&
+        !IsOutputDirectorySameAsInputDirectory() &&
         _inputPath != _outputPath;
 
     bool OutputWillOverwriteExisting => IsOutputDirectoryValid && File.Exists(_outputPath);
+
+    bool IsOutputDirectorySameAsInputDirectory()
+    {
+        if (!string.IsNullOrEmpty(_inputPath) && !string.IsNullOrEmpty(_outputPath))
+        {
+            var inputDirectory = Path.GetDirectoryName(_inputPath);
+            var outputDirectory = Path.GetDirectoryName(_outputPath);
+
+            var normalizedInputDirectory= Path.GetFullPath(inputDirectory).TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
+            var normalizedOutputDirectory = Path.GetFullPath(outputDirectory).TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
+
+            return string.Equals(normalizedInputDirectory, normalizedOutputDirectory, StringComparison.OrdinalIgnoreCase);
+        }
+
+        return false;
+    }
 
     private void Awake()
     {
@@ -217,7 +235,14 @@ public class MainUI : MonoBehaviour
         _outputPathTextField.RemoveFromClassList("invalid-field");
         _outputPathTextField.RemoveFromClassList("neutral-field");
 
-        if (!IsOutputDirectoryValid)
+        if (IsOutputDirectorySameAsInputDirectory())
+        {
+            _outputPathTextField.AddToClassList("invalid-field");
+            _outputPathValidLabel.text = "* The output directory cannot be the same as the input directory";
+            _outputPathValidLabel.style.display = DisplayStyle.Flex;
+
+        }
+        else if (!IsOutputDirectoryValid)
         {
             _outputPathTextField.AddToClassList("invalid-field");
             _outputPathValidLabel.text = "* This field is invalid";
@@ -232,6 +257,7 @@ public class MainUI : MonoBehaviour
         else
         {
             _outputPathTextField.AddToClassList("valid-field");
+            _outputPathValidLabel.text = "";
             _outputPathValidLabel.style.display = DisplayStyle.None;
         }
     }
